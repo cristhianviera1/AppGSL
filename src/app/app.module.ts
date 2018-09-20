@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import {InicioPage} from '../pages/inicio/inicio';
+
 import * as firebase from 'firebase';
 import { UsersserviceProvider } from '../providers/usersservice/usersservice';
 
@@ -28,6 +30,7 @@ firebase.initializeApp(config);
     MyApp,
     HomePage,
     LoginPage,
+    InicioPage,
     SignupPage
   ],
   imports: [
@@ -40,6 +43,7 @@ firebase.initializeApp(config);
     MyApp,
     HomePage,
     LoginPage,
+    InicioPage,
     SignupPage
   ],
   providers: [

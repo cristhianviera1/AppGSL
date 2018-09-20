@@ -1,10 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform } from 'ionic-angular';
+import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { InicioPage } from '../pages/inicio/inicio';
+
 import * as firebase from 'firebase';
 @Component({
   templateUrl: 'app.html'
@@ -14,30 +16,25 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    
-    
-
     this.initializeApp();
-
-  var that = this;
-
-    firebase.auth().onAuthStateChanged(function(user) {
+    var that = this;
+    
+    /*firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        // User is signed in.
-        that.rootPage = LoginPage;
+        // User is signed in.   
+        that.rootPage = InicioPage;
         // ...
       } else {
         // User is signed out.
         // ...
         that.rootPage = HomePage;
-
       }
-    });
+    });*/
 
-
+    
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -45,6 +42,7 @@ export class MyApp {
     ];
 
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -60,5 +58,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
 }
 
